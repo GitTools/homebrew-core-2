@@ -2,7 +2,7 @@ class GitHooksGo < Formula
   desc "Git hooks manager"
   homepage "https://git-hooks.github.io/git-hooks"
   url "https://github.com/git-hooks/git-hooks/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "c37cedf52b3ea267b7d3de67dde31adad4d2a22a7780950d6ca2da64a8b0341b"
+  sha256 "370f6b7fbacbeb698b8f547d0854c64c16034abc7a3a5af2ebc75241c9003531"
   license "MIT"
   head "https://github.com/git-hooks/git-hooks.git", branch: "master"
 

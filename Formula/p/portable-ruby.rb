@@ -55,6 +55,16 @@ class PortableRuby < PortableFormula
     end
   end
 
+  # Backport support for OpenSSL 4
+  patch do
+    url "https://github.com/ruby/ruby/commit/729e1512dfad3d341ed5916c87a500bce378545b.patch?full_index=1"
+    sha256 "64f43e5ed0f146ccf4a050c222f2924c5d3d6de06dfd182770735e9a2e8df982"
+  end
+  patch do
+    url "https://github.com/ruby/ruby/commit/cd38f6c5e141f18de1001b36baf3f18162d3d333.patch?full_index=1"
+    sha256 "f17899bed35d0249a6c007388d157b127fb0923a4bbad5ce751c8bd102b241f8"
+  end
+
   def install
     # Remove almost all bundled gems and replace with our own set.
     rm_r ".bundle"

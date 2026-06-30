@@ -3,7 +3,6 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
-  # TODO: Restore pybind11 dependency after https://github.com/pytorch/pytorch/pull/175115
   url "https://github.com/pytorch/pytorch/releases/download/v2.12.1/pytorch-v2.12.1.tar.gz"
   sha256 "757145cfd55c7c8c01f58c959f76230641cc67fdd1d8b6a130f93ad1bc116f5f"
   license "BSD-3-Clause"
@@ -35,7 +34,7 @@ class Pytorch < Formula
   depends_on "onnx"
   depends_on "openblas"
   depends_on "protobuf"
-  # TODO: depends_on "pybind11"
+  depends_on "pybind11"
   depends_on "sleef"
 
   on_macos do
@@ -133,12 +132,12 @@ class Pytorch < Formula
     ENV["USE_OPENMP"] = "ON"
     ENV["USE_SYSTEM_EIGEN_INSTALL"] = "ON"
     ENV["USE_SYSTEM_ONNX"] = "ON"
-    ENV["USE_SYSTEM_PYBIND11"] = "OFF"
+    ENV["USE_SYSTEM_PYBIND11"] = "ON"
     ENV["USE_SYSTEM_SLEEF"] = "ON"
     ENV["USE_MPS"] = "ON" if OS.mac?
     ENV["USE_KLEIDIAI"] = "OFF"
     # Linuxbrew GCC 12 cannot compile PyTorch's SVE+BF16 path; needs GCC 14+
-    ENV["BUILD_IGNORE_SVE_UNAVAILABLE"] = "1" if OS.linux? && Hardware::CPU.arch == :arm64
+    ENV["BUILD_IGNORE_SVE_UNAVAILABLE"] = "1" if OS.linux? && Hardware::CPU.arm64?
 
     # Workaround for
     # error: a template argument list is expected after a name prefixed by the template keyword

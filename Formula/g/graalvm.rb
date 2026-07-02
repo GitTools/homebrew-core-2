@@ -1,8 +1,8 @@
 class Graalvm < Formula
   desc "JDK distribution with Graal compiler and Native Image"
   homepage "https://www.graalvm.org/"
-  url "https://github.com/oracle/graal/archive/refs/tags/graal-25.0.2.tar.gz"
-  sha256 "c191206404d4cc706a9b1e2242f0f4b90df7c776a748bcfd8fa1da47d8314839"
+  url "https://github.com/oracle/graal/archive/refs/tags/graal-25.1.3.tar.gz"
+  sha256 "59fcbb0cc886200bb7df6eb95b7fb1ec05d026db452efbfeeb37f278978265d2"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do

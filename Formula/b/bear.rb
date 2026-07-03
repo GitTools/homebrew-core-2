@@ -1,8 +1,8 @@
 class Bear < Formula
   desc "Generate compilation database for clang tooling"
   homepage "https://github.com/rizsotto/Bear"
-  url "https://github.com/rizsotto/Bear/archive/refs/tags/4.1.4.tar.gz"
-  sha256 "1fd74a9d3c8cc05dd6651d17ab17fca25e62bc92c7739e6ae3260729788d3c58"
+  url "https://github.com/rizsotto/Bear/archive/refs/tags/4.1.5.tar.gz"
+  sha256 "164e93b54c31a37abd0eddd9e300894b4113eec70dc70ec4c9b8ad7bbe1aab24"
   license "GPL-3.0-or-later"
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
@@ -24,7 +24,7 @@ class Bear < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "bear")
+    system "cargo", "install", *std_cargo_args(path: "crates/bear")
 
     if OS.linux?
       ENV.append_to_rustflags "-C link-arg=-fuse-ld=lld"

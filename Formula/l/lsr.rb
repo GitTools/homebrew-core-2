@@ -1,6 +1,6 @@
 class Lsr < Formula
   desc "Ls but with io_uring"
-  homepage "https://tangled.sh/@rockorager.dev/lsr"
+  homepage "https://tangled.org/@rockorager.dev/lsr"
   url "https://tangled.sh/@rockorager.dev/lsr",
       tag:      "v1.0.0",
       revision: "9bfcae0be1d3ee2db176bb8001c0f46650484249"
